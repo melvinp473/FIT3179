@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css" >
+    <link rel="stylesheet" href="css/styles.css" media="all">
     <!-- <link rel="stylesheet" href="https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/css/styles.css"> -->
-    <title>Education in Australia</title>
+
+    <title>Data Visualisation 2</title>
 </head>
+
 <body>
     <h1>Education in Australia</h1>
     <p>Exploring education within Australia</p>
@@ -29,4 +34,11 @@
         vegaEmbed('#chart', 'js/heatmap.vg.json').catch(console.error);
     </script>
 </body>
+
+<footer>
+    <p>Author: Melvin Pramode</p>
+    <p>Date: 15/20/2024</p>
+    <p>Data Source: https://www.abs.gov.au/statistics/people/education/schools/2023</p>
+</footer>
+
 </html>

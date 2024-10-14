@@ -36,6 +36,14 @@ p {
     text-align: center;
 }
 
-.curved-box h2, .curved-box p {
+.curved-box h2,
+.curved-box p {
     margin: 5px 0;
+}
+
+footer {
+    font-family: 'Playwrite IS', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
 }

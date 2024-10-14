@@ -4,66 +4,112 @@
     "width": 800,
     "height": 600,
     "data": {
-      "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/heatmap_data.csv"
+        "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/heatmap_data.csv"
     },
     "transform": [
-      {
-        "lookup": "state",
-        "from": {
-          "data": {
-            "values": [
-              {"abbreviation": "NSW", "full_name": "New South Wales"},
-              {"abbreviation": "VIC", "full_name": "Victoria"},
-              {"abbreviation": "QLD", "full_name": "Queensland"},
-              {"abbreviation": "SA", "full_name": "South Australia"},
-              {"abbreviation": "WA", "full_name": "Western Australia"},
-              {"abbreviation": "TAS", "full_name": "Tasmania"},
-              {"abbreviation": "NT", "full_name": "Northern Territory"},
-              {"abbreviation": "ACT", "full_name": "Australian Capital Territory"}
-            ]
-          },
-          "key": "abbreviation",
-          "fields": ["full_name"]
+        {
+            "lookup": "state",
+            "from": {
+                "data": {
+                    "values": [
+                        {
+                            "abbreviation": "NSW",
+                            "full_name": "New South Wales"
+                        },
+                        {
+                            "abbreviation": "VIC",
+                            "full_name": "Victoria"
+                        },
+                        {
+                            "abbreviation": "QLD",
+                            "full_name": "Queensland"
+                        },
+                        {
+                            "abbreviation": "SA",
+                            "full_name": "South Australia"
+                        },
+                        {
+                            "abbreviation": "WA",
+                            "full_name": "Western Australia"
+                        },
+                        {
+                            "abbreviation": "TAS",
+                            "full_name": "Tasmania"
+                        },
+                        {
+                            "abbreviation": "NT",
+                            "full_name": "Northern Territory"
+                        },
+                        {
+                            "abbreviation": "ACT",
+                            "full_name": "Australian Capital Territory"
+                        }
+                    ]
+                },
+                "key": "abbreviation",
+                "fields": [
+                    "full_name"
+                ]
+            }
+        },
+        {
+            "calculate": "datum.full_name",
+            "as": "state"
         }
-      },
-      {
-        "calculate": "datum.full_name",
-        "as": "state"
-      }
     ],
     "mark": "rect",
     "encoding": {
-      "x": {
-        "field": "year",
-        "type": "ordinal",
-        "title": "Year"
-      },
-      "y": {
-        "field": "state",
-        "type": "nominal",
-        "title": "State"
-      },
-      "color": {
-        "field": "students",
-        "type": "quantitative",
-        "title": "Students",
-        "scale": {
-          "type": "log",
-          "scheme": "viridis",
-          "reverse": true
-        }
-      },
-      "tooltip": [
-        {"field": "state", "type": "nominal", "title": "State"},
-        {"field": "year", "type": "ordinal", "title": "Year"},
-        {"field": "students", "type": "quantitative", "title": "Students"}
-      ]
+        "x": {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+        },
+        "color": {
+            "field": "students",
+            "type": "quantitative",
+            "title": "Students",
+            "scale": {
+                "type": "log",
+                "range": [
+                    "#f7fbff",
+                    "#deebf7",
+                    "#c6dbef",
+                    "#9ecae1",
+                    "#6baed6",
+                    "#4292c6",
+                    "#2171b5",
+                    "#08519c",
+                    "#08306b"
+                ]
+            }
+        },
+        "tooltip": [
+            {
+                "field": "state",
+                "type": "nominal",
+                "title": "State"
+            },
+            {
+                "field": "year",
+                "type": "ordinal",
+                "title": "Year"
+            },
+            {
+                "field": "students",
+                "type": "quantitative",
+                "title": "Students"
+            }
+        ]
     },
     "config": {
-      "axis": {
-        "labelFontSize": 14,
-        "titleFontSize": 16
-      }
+        "axis": {
+            "labelFontSize": 14,
+            "titleFontSize": 16
+        }
     }
-  }
-  
+}
