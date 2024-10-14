@@ -6,6 +6,31 @@
     "data": {
       "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/heatmap_data.csv"
     },
+    "transform": [
+      {
+        "lookup": "state",
+        "from": {
+          "data": {
+            "values": [
+              {"abbreviation": "NSW", "full_name": "New South Wales"},
+              {"abbreviation": "VIC", "full_name": "Victoria"},
+              {"abbreviation": "QLD", "full_name": "Queensland"},
+              {"abbreviation": "SA", "full_name": "South Australia"},
+              {"abbreviation": "WA", "full_name": "Western Australia"},
+              {"abbreviation": "TAS", "full_name": "Tasmania"},
+              {"abbreviation": "NT", "full_name": "Northern Territory"},
+              {"abbreviation": "ACT", "full_name": "Australian Capital Territory"}
+            ]
+          },
+          "key": "abbreviation",
+          "fields": ["full_name"]
+        }
+      },
+      {
+        "calculate": "datum.full_name",
+        "as": "state"
+      }
+    ],
     "mark": "rect",
     "encoding": {
       "x": {
@@ -23,7 +48,9 @@
         "type": "quantitative",
         "title": "Students",
         "scale": {
-          "scheme": "viridis"
+          "type": "log",
+          "scheme": "viridis",
+          "reverse": true
         }
       },
       "tooltip": [
