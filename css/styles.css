@@ -18,12 +18,24 @@ p {
     text-align: center;
 }
 
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 400
+.curved-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; Ensure full height for centering */
+}
 
-.playwrite-is-<uniquifier> {
-  font-family: "Playwrite IS", cursive;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+.curved-box {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.curved-box h2, .curved-box p {
+    margin: 5px 0;
 }

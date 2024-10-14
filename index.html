@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css\styles.css">
-	
-    <title>Dummy Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Education in Australia</title>
 </head>
 <body>
-    <h1>Hello, world!</h1>
-    <p>This is a paragraph in Google Fonts' Playwrite IS.</p>
+    <h1>Education in Australia</h1>
+    <p>Exploring education within Australia</p>
+
+    <div class="curved-box-container">
+        <div class="curved-box" id="vis">
+            <h2>Education Data by State and Year</h2>
+            <div id="chart"></div>
+            <p>Visualizing educational trends across different states in Australia from 2019 to 2023.</p>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        vegaEmbed('#chart', 'js/heatmap.vg.json').catch(console.error);
+    </script>
 </body>
 </html>
