@@ -10,19 +10,22 @@
       {
         "lookup": "properties.STATE_NAME",
         "from": {
-          "data": {"url": "path/to/your/data.csv"},
+          "data": {
+            "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/chloropleth_data.csv",
+            "format": {"type": "csv"}
+          },
           "key": "state",
-          "fields": ["value"]
+          "fields": ["government_student"]
         }
       }
     ],
     "projection": {"type": "mercator"},
     "mark": "geoshape",
     "encoding": {
-      "color": {"field": "value", "type": "quantitative"},
+      "color": {"field": "government_student", "type": "quantitative"},
       "tooltip": [
         {"field": "properties.STATE_NAME", "type": "nominal"},
-        {"field": "value", "type": "quantitative"}
+        {"field": "government_student", "type": "quantitative", "format": ","}
       ]
     }
   }

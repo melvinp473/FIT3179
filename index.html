@@ -21,17 +21,31 @@
 <body>
     <h1>Education in Australia</h1>
     <p>Exploring education within Australia</p>
+    
+    <div class="curved-box-container">
+        <div class="curved-box" id="vis">
+            <h2>Student Enrolments</h2>
+            <div id="chloropleth"></div>
+            <p>Student enrolment counts by state and territory and school affiliation in 2023.</p>
+        </div>
+    </div>
 
     <div class="curved-box-container">
         <div class="curved-box" id="vis">
             <h2>Overseas Student Enrolments</h2>
-            <div id="chart"></div>
+            <div id="heatmap"></div>
             <p>Full-fee paying overseas student enrolments by state and territory in Australia from 2019 to 2023.</p>
         </div>
     </div>
 
     <script type="text/javascript">
-        vegaEmbed('#chart', 'js/heatmap.vg.json').catch(console.error);
+        vegaEmbed('#heatmap', 'js/heatmap.vg.json').then(function (result) {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#chloropleth', 'js/chloropleth.vg.json').then(function (result) {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
     </script>
 </body>
 
