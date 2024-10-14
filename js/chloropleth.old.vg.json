@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "data": {
+      "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/aus_map_states.json",
+      "format": {"type": "topojson", "feature": "states"}
+    },
+    "transform": [
+      {
+        "lookup": "properties.STATE_NAME",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/chloropleth_data.csv",
+            "format": {"type": "csv"}
+          },
+          "key": "state",
+          "fields": ["government_student"]
+        }
+      }
+    ],
+    "projection": {"type": "mercator"},
+    "mark": "geoshape",
+    "encoding": {
+      "color": {"field": "government_student", "type": "quantitative"},
+      "tooltip": [
+        {"field": "properties.STATE_NAME", "type": "nominal"},
+        {"field": "government_student", "type": "quantitative", "format": ","}
+      ]
+    }
+  }
+  
