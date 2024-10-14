@@ -1,76 +1,94 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 600,
-  "data": {
-    "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/aus_map_states.json",
-    "format": {"type": "topojson", "feature": "states"}
-  },
-  "transform": [
-    {
-      "lookup": "properties.STATE_NAME",
-      "from": {
-        "data": {"url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/chloropleth_data.csv"},
-        "key": "state",
-        "fields": ["government_student", "non_government_student"]
-      }
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "data": {
+        "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/aus_map_states.json",
+        "format": {
+            "type": "topojson",
+            "feature": "states"
+        }
     },
-    {
-      "calculate": "datum.government_student",
-      "as": "Government"
-    },
-    {
-      "calculate": "datum.non_government_student",
-      "as": "Non-Government"
-    },
-    {
-      "calculate": "parseFloat(datum.government_student) + parseFloat(datum.non_government_student)",
-      "as": "Total"
-    },
-    {
-        "calculate": "datum[enrolment_selector]",
-        "as": "students"
-    }
-  ],
-  "params": [
-    {
-      "name": "enrolment_selector",
-      "bind": {
-        "input": "select",
-        "options": ["Government", "Non-Government", "Total"],
-        "labels": ["Government", "Non-Government", "Total"],
-        "name": "Select Student Enrolment Type: "
-      },
-      "value": "Total"
-    }
-  ],
-  "layer": [
-    {
-      "mark": "geoshape",
-      "encoding": {
-        "color": {
-          "field": "students",
-          "type": "quantitative",
-          "title": "Students",
-          "scale": {
-            "range": [
-              "#f7fbff",
-              "#deebf7",
-              "#c6dbef",
-              "#9ecae1",
-              "#6baed6",
-              "#4292c6",
-              "#2171b5",
-              "#08519c",
-              "#08306b"
-            ]
-          }
+    "transform": [
+        {
+            "lookup": "properties.STATE_NAME",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/chloropleth_data.csv"
+                },
+                "key": "state",
+                "fields": [
+                    "government_student",
+                    "non_government_student"
+                ]
+            }
         },
-        "tooltip": [
-          {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
-          {"field": "students", "type": "quantitative", "title": "Students", "format": ","}
-        ]
-      }
-    }
-  ]
+        {
+            "calculate": "datum.government_student",
+            "as": "Government"
+        },
+        {
+            "calculate": "datum.non_government_student",
+            "as": "Non-Government"
+        },
+        {
+            "calculate": "parseFloat(datum.government_student) + parseFloat(datum.non_government_student)",
+            "as": "Total"
+        },
+        {
+            "calculate": "datum[enrolment_selector]",
+            "as": "Students"
+        }
+    ],
+    "params": [
+        {
+            "name": "enrolment_selector",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "Government",
+                    "Non-Government",
+                    "Total"
+                ],
+                "name": "Student Enrolment Type: "
+            },
+            "value": "Total"
+        }
+    ],
+    "layer": [
+        {
+            "mark": "geoshape",
+            "encoding": {
+                "color": {
+                    "field": "Students",
+                    "type": "quantitative",
+                    "scale": {
+                        "range": [
+                            "#f7fbff",
+                            "#deebf7",
+                            "#c6dbef",
+                            "#9ecae1",
+                            "#6baed6",
+                            "#4292c6",
+                            "#2171b5",
+                            "#08519c",
+                            "#08306b"
+                        ]
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "properties.STATE_NAME",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "Students",
+                        "type": "quantitative",
+                        "format": ","
+                    }
+                ]
+            }
+        }
+    ]
 }
