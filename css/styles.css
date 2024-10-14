@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Playwrite IS', cursive;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
@@ -16,4 +16,14 @@ p {
     font-weight: 400;
     color: #555;
     text-align: center;
+}
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 400
+
+.playwrite-is-<uniquifier> {
+  font-family: "Playwrite IS", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
