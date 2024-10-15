@@ -50,6 +50,11 @@
                     "Non-Government",
                     "Total"
                 ],
+                "labels": [
+                    "Government",
+                    "Non-Government",
+                    "All"
+                ],
                 "name": "Student Enrolment Type: "
             },
             "value": "Total"

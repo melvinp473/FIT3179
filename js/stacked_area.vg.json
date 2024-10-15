@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Proportion of Enrolments by School Affiliation, Australia, 2006 to 2023",
-    "width": 800,
-    "height": 600,
+    "width": 700,
+    "height": 500,
     "data": {
         "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/area_data.csv",
         "format": {
@@ -20,6 +20,35 @@
                 "School Affiliation",
                 "Percentage"
             ]
+        },
+        {
+            "lookup": "School Affiliation",
+            "from": {
+                "data": {
+                    "values": [
+                        {
+                            "School Affiliation": "government",
+                            "Title Case": "Government"
+                        },
+                        {
+                            "School Affiliation": "catholic",
+                            "Title Case": "Catholic"
+                        },
+                        {
+                            "School Affiliation": "independent",
+                            "Title Case": "Independent"
+                        }
+                    ]
+                },
+                "key": "School Affiliation",
+                "fields": [
+                    "Title Case"
+                ]
+            }
+        },
+        {
+            "calculate": "datum.Percentage + '%'",
+            "as": "PercentageWithSymbol"
         }
     ],
     "mark": "area",
@@ -27,7 +56,8 @@
         "x": {
             "field": "year",
             "type": "temporal",
-            "title": "Year"
+            "timeUnit": "year",
+            "title": null
         },
         "y": {
             "field": "Percentage",
@@ -36,12 +66,13 @@
             "title": null
         },
         "color": {
-            "field": "School Affiliation",
+            "field": "Title Case",
             "type": "nominal",
+            "title": "School Affiliation",
             "sort": [
-                "government",
-                "catholic",
-                "independent"
+                "Government",
+                "Catholic",
+                "Independent"
             ],
             "scale": {
                 "range": [
@@ -53,6 +84,24 @@
         },
         "order": {
             "field": "null"
-        }
+        },
+        "tooltip": [
+            {
+                "field": "Title Case",
+                "type": "nominal",
+                "title": "School Affiliation"
+            },
+            {
+                "field": "year",
+                "type": "temporal",
+                "timeUnit": "year",
+                "title": "Year"
+            },
+            {
+                "field": "PercentageWithSymbol",
+                "type": "nominal",
+                "title": "Percentage"
+            }
+        ]
     }
 }

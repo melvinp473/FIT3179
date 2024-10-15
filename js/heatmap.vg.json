@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Heatmap of overseas students by year and state.",
-    "width": 600,
-    "height": 400,
+    "width": 650,
+    "height": 500,
     "data": {
         "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/heatmap_data.csv"
     },
@@ -62,7 +62,7 @@
         "x": {
             "field": "year",
             "type": "ordinal",
-            "title": "Year"
+            "title": null
         },
         "y": {
             "field": "state",
@@ -106,11 +106,5 @@
                 "format": ","
             }
         ]
-    },
-    "config": {
-        "axis": {
-            "labelFontSize": 14,
-            "titleFontSize": 16
-        }
     }
 }
