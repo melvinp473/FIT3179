@@ -24,6 +24,14 @@
     
     <div class="curved-box-container">
         <div class="curved-box" id="vis">
+            <h2>School Count</h2>
+            <div id="paired_column"></div>
+            <p>School counts by state and territory in Australia from 2022 to 2023.</p>
+        </div>
+    </div>
+
+    <div class="curved-box-container">
+        <div class="curved-box" id="vis">
             <h2>Student Enrolments</h2>
             <div id="chloropleth"></div>
             <p>Student enrolment counts by state and territory and school affiliation in 2023.</p>
@@ -56,6 +64,10 @@
         }).catch(console.error);
 
         vegaEmbed('#stacked_area', 'js/stacked_area.vg.json').then(function (result) {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#paired_column', 'js/paired_column.vg.json').then(function (result) {
             // Access the Vega view instance as result.view
         }).catch(console.error);
     </script>

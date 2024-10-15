@@ -1,0 +1,74 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/column_data.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "width": 75,
+    "height": 500,
+    "mark": {
+        "type": "bar"
+    },
+    "encoding": {
+        "column": {
+            "field": "state",
+            "type": "nominal",
+            "spacing": 10,
+            "title": null,
+            "sort": [
+                "ACT",
+                "NSW",
+                "NT",
+                "QLD",
+                "SA",
+                "TAS",
+                "VIC",
+                "WA",
+                "AUST"
+            ]
+        },
+        "x": {
+            "field": "year",
+            "type": "nominal",
+            "title": "Year",
+            "axis": {
+                "title": null,
+                "labels": false,
+                "ticks": false
+            }
+        },
+        "y": {
+            "field": "school_count",
+            "type": "quantitative",
+            "axis": {
+                "title": "School Count"
+            }
+        },
+        "color": {
+            "field": "year",
+            "type": "nominal",
+            "title": "Year",
+            "scale": {
+                "range": [
+                    "#2171b5",
+                    "#08306b"
+                ]
+            }
+        },
+        "tooltip": [
+            {
+                "field": "year",
+                "type": "nominal",
+                "title": "Year"
+            },
+            {
+                "field": "school_count",
+                "type": "quantitative",
+                "title": "School Count",
+                "format": ","
+            }
+        ]
+    }
+}
