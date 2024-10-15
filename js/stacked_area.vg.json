@@ -70,15 +70,15 @@
             "type": "nominal",
             "title": "School Affiliation",
             "sort": [
-                "Government",
+                "Independent",
                 "Catholic",
-                "Independent"
+                "Government"
             ],
             "scale": {
                 "range": [
-                    "#08306b",
+                    "#6baed6",
                     "#2171b5",
-                    "#6baed6"
+                    "#08306b"
                 ]
             }
         },
