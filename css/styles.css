@@ -1,5 +1,5 @@
 body {
-    font-family: 'Montserrat', cursive;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
@@ -38,7 +38,6 @@ p {
 .text-div {
     width: 450px;
     margin: auto;
-    padding-top: 20px;
 }
 
 .curved-box-container {
@@ -62,5 +61,5 @@ p {
 
 .curved-box h2,
 .curved-box p {
-    margin: 5px 0;
+    margin: 15px 0 0 0;
 }
