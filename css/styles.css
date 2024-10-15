@@ -18,6 +18,11 @@ p {
     text-align: center;
 }
 
+.text-div {
+    width: 450px;
+    margin: auto;
+}
+
 .curved-box-container {
     display: flex;
     justify-content: center;
