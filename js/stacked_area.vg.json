@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Proportion of Enrolments by School Affiliation, Australia, 2006 to 2023",
+    "width": 800,
+    "height": 600,
+    "data": {
+        "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/area_data.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "transform": [
+        {
+            "fold": [
+                "government",
+                "catholic",
+                "independent"
+            ],
+            "as": [
+                "School Affiliation",
+                "Percentage"
+            ]
+        }
+    ],
+    "mark": "area",
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "temporal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "Percentage",
+            "type": "quantitative",
+            "stack": "normalize",
+            "title": null
+        },
+        "color": {
+            "field": "School Affiliation",
+            "type": "nominal",
+            "sort": [
+                "government",
+                "catholic",
+                "independent"
+            ],
+            "scale": {
+                "range": [
+                    "#08306b",
+                    "#2171b5",
+                    "#6baed6"
+                ]
+            }
+        },
+        "order": {
+            "field": "null"
+        }
+    }
+}

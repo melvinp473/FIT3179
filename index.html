@@ -38,12 +38,24 @@
         </div>
     </div>
 
+    <div class="curved-box-container">
+        <div class="curved-box" id="vis">
+            <h2>Proportion of Enrolments</h2>
+            <div id="stacked_area"></div>
+            <p>Proportion of enrolments by school affiliation in Australia from 2006 to 2023.</p>
+        </div>
+    </div>
+
     <script type="text/javascript">
         vegaEmbed('#heatmap', 'js/heatmap.vg.json').then(function (result) {
             // Access the Vega view instance as result.view
         }).catch(console.error);
 
         vegaEmbed('#chloropleth', 'js/chloropleth.vg.json').then(function (result) {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#stacked_area', 'js/stacked_area.vg.json').then(function (result) {
             // Access the Vega view instance as result.view
         }).catch(console.error);
     </script>
