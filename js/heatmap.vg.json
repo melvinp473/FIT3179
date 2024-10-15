@@ -67,7 +67,7 @@
         "y": {
             "field": "state",
             "type": "nominal",
-            "title": "State"
+            "title": null
         },
         "color": {
             "field": "students",
