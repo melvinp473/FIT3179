@@ -34,6 +34,7 @@ p {
     overflow: hidden;
     position: relative;
     text-align: center;
+    width: 1000px;
 }
 
 .curved-box h2,
