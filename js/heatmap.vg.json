@@ -1,6 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Heatmap of overseas students by year and state.",
     "width": 700,
     "height": 500,
     "data": {

@@ -1,13 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 75,
+    "height": 500,
     "data": {
         "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/column_data.csv",
         "format": {
             "type": "csv"
         }
     },
-    "width": 75,
-    "height": 500,
     "mark": {
         "type": "bar"
     },

@@ -1,6 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Proportion of Enrolments by School Affiliation, Australia, 2006 to 2023",
     "width": 700,
     "height": 500,
     "data": {
