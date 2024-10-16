@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Heatmap of overseas students by year and state.",
-    "width": 650,
+    "width": 700,
     "height": 500,
     "data": {
         "url": "https://raw.githubusercontent.com/melvinp473/FIT3179/refs/heads/main/data/heatmap_data.csv"
@@ -106,5 +106,16 @@
                 "format": ","
             }
         ]
+    },
+    "config": {
+        "font": "Montserrat",
+        "axis": {
+            "labelFont": "Montserrat",
+            "titleFont": "Montserrat"
+        },
+        "legend": {
+            "labelFont": "Montserrat",
+            "titleFont": "Montserrat"
+        }
     }
 }

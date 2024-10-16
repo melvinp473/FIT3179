@@ -93,19 +93,24 @@
     </div>
 
     <script type="text/javascript">
-        vegaEmbed('#heatmap', 'js/heatmap.vg.json').then(function (result) {
+        var vegaEmbedOpts = {
+            actions: false,
+            renderer: "svg"
+        };
+
+        vegaEmbed('#heatmap', 'js/heatmap.vg.json', vegaEmbedOpts).then(function (result) {
             // Access the Vega view instance as result.view
         }).catch(console.error);
 
-        vegaEmbed('#chloropleth', 'js/chloropleth.vg.json').then(function (result) {
+        vegaEmbed('#chloropleth', 'js/chloropleth.vg.json', vegaEmbedOpts).then(function (result) {
             // Access the Vega view instance as result.view
         }).catch(console.error);
 
-        vegaEmbed('#stacked_area', 'js/stacked_area.vg.json').then(function (result) {
+        vegaEmbed('#stacked_area', 'js/stacked_area.vg.json', vegaEmbedOpts).then(function (result) {
             // Access the Vega view instance as result.view
         }).catch(console.error);
 
-        vegaEmbed('#paired_column', 'js/paired_column.vg.json').then(function (result) {
+        vegaEmbed('#paired_column', 'js/paired_column.vg.json', vegaEmbedOpts).then(function (result) {
             // Access the Vega view instance as result.view
         }).catch(console.error);
     </script>

@@ -70,5 +70,16 @@
                 "format": ","
             }
         ]
+    },
+    "config": {
+        "font": "Montserrat",
+        "axis": {
+            "labelFont": "Montserrat",
+            "titleFont": "Montserrat"
+        },
+        "legend": {
+            "labelFont": "Montserrat",
+            "titleFont": "Montserrat"
+        }
     }
 }
